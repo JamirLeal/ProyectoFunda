@@ -1,1 +1,24 @@
 #include <iostream>
+
+// srand((int)time(0)); se usa para indicar que quieres
+// diferentes números aleatorios cada vez que se corre
+// el programa.
+// Genera aleatoriamente las posiciones para poner las fichas
+// al inicio coloca 1 en todas las casillas
+// posteriormente coloca números aleatorios en las posiciones
+
+    int cMatTablero[4][4];
+    int iR, iC, iCont;
+    //inicializa tablero
+    for (iR = 0; iR < 4; iR++)
+        for (iC = 0; iC < 4; iC++)
+            cMatTablero[iR][iC] = 1;
+    srand((int)time(0));
+    for (iCont = 1; iCont <= 15; )
+{
+iR = rand() % 4; // esto genera un numero aleatorio iC=rand()%4; //entre0y3paralaposición
+if (cMatTablero[iR][iC] == 1)
+{
+            cMatTablero[iR][iC] = rand() % 53+1;
+iCont++; }
+}
